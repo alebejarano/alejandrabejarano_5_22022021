@@ -1,0 +1,23 @@
+{
+  "name": "p5",
+  "version": "1.0.0",
+  "description": "projet 5, OpenClassrooms - Learn Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alebejarano/alejandrabejarano_5_22022021.git"
+  },
+  "keywords": [
+    "p5",
+    "orinoco"
+  ],
+  "author": "Alejandr Bejarano Alarcon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alebejarano/alejandrabejarano_5_22022021/issues"
+  },
+  "homepage": "https://github.com/alebejarano/alejandrabejarano_5_22022021#readme"
+}
