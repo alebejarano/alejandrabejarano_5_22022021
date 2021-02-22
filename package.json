@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/alebejarano/alejandrabejarano_5_22022021/issues"
   },
-  "homepage": "https://github.com/alebejarano/alejandrabejarano_5_22022021#readme"
+  "homepage": "https://github.com/alebejarano/alejandrabejarano_5_22022021#readme",
+  "dependencies": {
+    "bootstrap": "^4.6.0"
+  }
 }
