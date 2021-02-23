@@ -6,10 +6,10 @@
     background-color: $header-background;
 }
 .footer-background {
-    background-color: #CFCBDB;
+    background-color: $footer-background;
 }
 .color-link {
-    color: #5A3A4D;
+    color: $color-link;
     span{
         transition: all .5s;
       }
@@ -41,10 +41,7 @@
       }
 }
 a:hover {
-    color: #A99EFF;
-}
-.social-media-handle:hover {
-    color: #A99EFF;
+  color: $link-hover;
 }
 .cart {
     font-size: 1.2em;
