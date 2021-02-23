@@ -1,0 +1,4 @@
+let products = [];
+function getProducts() {
+    
+}
