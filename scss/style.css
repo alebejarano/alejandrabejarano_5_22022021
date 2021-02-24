@@ -10906,4 +10906,9 @@ a:hover {
   justify-content: flex-end;
   transform: translate(19px,-77px);
 }*/
+.card-flex {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
 /*# sourceMappingURL=style.css.map */

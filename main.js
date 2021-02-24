@@ -6,9 +6,9 @@ function getProducts() {
         let productsContainer = '';
         data.forEach(function(teddie){
             productsContainer +=
-            `<div class="col-sm-6 col-lg-4 mb-3">
-                <div class="card">
-                <img class="card-img-top" src="${teddie.imageUrl}">
+            `<div class="col-sm-6 col-lg-4 mb-3 d-flex">
+                <div class="card card-flex">
+                    <img class="card-img-top" src="${teddie.imageUrl}">
                     <div class="card-body">
                         <h3 class="card-title">${teddie.name}</h3>
                         <p class="id-productsList">${teddie._id}</p>
