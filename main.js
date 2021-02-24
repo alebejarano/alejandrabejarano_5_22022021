@@ -1,4 +1,6 @@
 let products = [];
+
+
 function getProducts() {
     fetch('http://localhost:3000/api/teddies')
     .then((res) => res.json())
@@ -8,17 +10,24 @@ function getProducts() {
             productsContainer +=
             `<div class="col-sm-6 col-lg-4 mb-3 d-flex">
                 <div class="card card-flex">
-                    <img class="card-img-top" src="${teddie.imageUrl}">
+                    <a href="#" class="product-preview"><img class="card-img-top" src="${teddie.imageUrl}"></a>
                     <div class="card-body">
-                        <h3 class="card-title">${teddie.name}</h3>
-                        <p class="id-productsList">${teddie._id}</p>
-                        <p class="card-text">${teddie.price}&euro;</p>
+                        <a href="#" class="product-preview color-link"><h3 class="card-title text-center">${teddie.name}</h3></a>
+                        <p class="d-none">${teddie._id}</p>
+                        <p class="card-text text-center">${teddie.price}&euro;</p>
                     </div> 
                 </div>       
             </div>
             `;
         });
         document.getElementById('productsContainer').innerHTML = productsContainer;
+        let productPreviews = document.querySelectorAll('.product-preview');
+        console.log(productPreviews);
+        productPreviews.forEach(preview => {
+            preview.addEventListener('click', () => {
+                console.log('Hi');
+            })
+        });
     })
 }
 getProducts();

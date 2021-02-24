@@ -1,5 +1,6 @@
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "./utils/variables";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
 
 
 .header-background  {
@@ -46,11 +47,6 @@ a:hover {
 .cart {
     font-size: 1.2em;
 }
-/*.cart-container {
-  display: flex;
-  justify-content: flex-end;
-  transform: translate(19px,-77px);
-}*/ 
 .card-flex {
   flex: 1
 }

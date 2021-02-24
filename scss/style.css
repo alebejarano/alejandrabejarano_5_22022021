@@ -6,7 +6,7 @@
  */
 :root {
   --blue: #007bff;
-  --indigo: #6610f2;
+  --indigo: #a890ce;
   --purple: #6f42c1;
   --pink: #e83e8c;
   --red: #dc3545;
@@ -5084,7 +5084,7 @@ input[type="button"].btn-block {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  border: 1px solid white;
   border-radius: 0.25rem;
 }
 
@@ -5148,7 +5148,7 @@ input[type="button"].btn-block {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
   background-color: rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  border-bottom: 1px solid white;
 }
 
 .card-header:first-child {
@@ -5158,7 +5158,7 @@ input[type="button"].btn-block {
 .card-footer {
   padding: 0.75rem 1.25rem;
   background-color: rgba(0, 0, 0, 0.03);
-  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  border-top: 1px solid white;
 }
 
 .card-footer:last-child {
@@ -10901,11 +10901,6 @@ a:hover {
   font-size: 1.2em;
 }
 
-/*.cart-container {
-  display: flex;
-  justify-content: flex-end;
-  transform: translate(19px,-77px);
-}*/
 .card-flex {
   -webkit-box-flex: 1;
       -ms-flex: 1;
