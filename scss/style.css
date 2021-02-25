@@ -10897,7 +10897,7 @@ a:hover {
   color: #A99EFF;
 }
 
-.cart {
+.icon-nav {
   font-size: 1.2em;
 }
 
@@ -10905,5 +10905,16 @@ a:hover {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+.icons-menu {
+  display: inline;
+  float: right;
+  -webkit-transform: translate(0px, 39px);
+          transform: translate(0px, 39px);
+}
+
+.teddie-name {
+  color: #A4B1C5;
 }
 /*# sourceMappingURL=style.css.map */

@@ -44,9 +44,17 @@
 a:hover {
   color: $link-hover;
 }
-.cart {
+.icon-nav {
     font-size: 1.2em;
 }
 .card-flex {
   flex: 1
+}
+.icons-menu {
+  display: inline;
+  float: right;
+  transform: translate(0px, 39px);
+}
+.teddie-name {
+  color: $teddies-name;
 }
