@@ -1,6 +1,6 @@
 let products = [];
 
-
+// for all the products to display in Teddies (index.html)
 function getProducts() {
     fetch('http://localhost:3000/api/teddies')
     .then((res) => res.json())
@@ -9,25 +9,54 @@ function getProducts() {
         data.forEach(function(teddie){
             productsContainer +=
             `<div class="col-sm-6 col-lg-4 mb-3 d-flex">
-                <div class="card card-flex">
-                    <a href="productPreview.html?id=${teddie._id}" class="product-preview"><img class="card-img-top" src="${teddie.imageUrl}"></a>
-                    <div class="card-body">
-                        <a href="#" class="product-preview color-link"><h3 class="card-title text-center">${teddie.name}</h3></a>
-                        <p class="d-none">${teddie._id}</p>
-                        <p class="card-text text-center">${teddie.price}&euro;</p>
+                <a href="productPreview.html?id=${teddie._id}">
+                    <div class="card card-flex">
+                        <img class="card-img-top" src="${teddie.imageUrl}" alt="ours en peluche">
+                        <div class="card-body">
+                            <p class="card-title text-center">${teddie.name}</p>
+                            <p class="d-none">${teddie._id}</p>
+                            <p class="card-text text-center">${teddie.price}&euro;</p>
+                        </div> 
                     </div> 
-                </div>       
+                </a>          
             </div>
             `;
         });
         document.getElementById('productsContainer').innerHTML = productsContainer;
-        let productPreviews = document.querySelectorAll('.product-preview');
-        console.log(productPreviews);
-        productPreviews.forEach(preview => {
-            preview.addEventListener('click', () => {
+    })
+}
+// to display the selected product in the product preview page
+function getSingleProduct() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+    fetch(`http://localhost:3000/api/teddies/${productId}`)
+    .then((res) => res.json())
+    .then((teddie) => {
+        let preview = `
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img  class="card-img" src="${teddie.imageUrl}" alt="ours en peluche">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">${teddie.name}</h5>
+                        <p class="card-text">${teddie.description}</p>
+                        <p class="card-text">${teddie.price}&euro;</p>
+                        <p class="card-text"><small class="text-muted">${teddie.colors}</small></p>
+                        <button type="button" class="btn product-preview">Ajouter au panier</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+        document.getElementById('preview').innerHTML = preview; 
+        let addToCart = document.querySelectorAll('.product-preview');
+        console.log(addToCart);
+        addToCart.forEach(product => {
+            product.addEventListener('click', () => {
                 console.log('Hi');
             })
         });
-    })
+    });
 }
-getProducts();
