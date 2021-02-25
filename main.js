@@ -51,6 +51,7 @@ function getSingleProduct() {
         </div>
         `;
         document.getElementById('preview').innerHTML = preview; 
+        // to add to the cart the selected teddie
         let addToCart = document.querySelectorAll('.product-preview');
         console.log(addToCart);
         addToCart.forEach(product => {
