@@ -2,7 +2,19 @@
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
 
-
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1 0 auto;
+}
+footer {
+  flex-shrink: 0;
+}
 .header-background  {
     background-color: $header-background;
 }

@@ -32,6 +32,10 @@ function getSingleProduct() {
     fetch(`http://localhost:3000/api/teddies/${productId}`)
     .then((res) => res.json())
     .then((teddie) => {
+        let colorOptions = '';
+        teddie.colors.forEach(color => {
+            colorOptions += `<option value="color">${color}</option>`
+        })
         let preview = `
         <div class="card mb-3">
             <div class="row no-gutters">
@@ -43,7 +47,10 @@ function getSingleProduct() {
                         <h5 class="card-title teddie-name">${teddie.name}</h5>
                         <p class="card-text">${teddie.description}</p>
                         <p class="card-text">${teddie.price}&euro;</p>
-                        <p class="card-text"><small class="text-muted">Choix des Coleurs: ${teddie.colors}</small></p>
+                        <label for="color-select">Choix des Coleurs:</label>
+                        <select name="colors" id="color-select">
+                            ${colorOptions}
+                        </select>
                         <button type="button" class="btn  btn-light  py-1 px-3 product-preview">AJOUTER AU PANIER</button>
                     </div>
                 </div>
