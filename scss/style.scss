@@ -65,8 +65,25 @@ a:hover {
 .icons-menu {
   display: inline;
   float: right;
-  transform: translate(0px, 39px);
+  /*transform: translate(0px, 39px);*/ 
+}
+.icon-nav-1 {
+  font-size: 1.2em;
+  transform: translate(-15px, 39px);
+}
+.icon-nav-2 {
+  font-size: 1.2em;
+  transform: translate(6px, 39px);
 }
 .teddie-name {
   color: $teddies-name;
+}
+.img-logo {
+  width: 200px;
+  @media (max-width: 420px) {
+    width: 70%;
+  }
+  @media (min-width: 640px) {
+    width: 50%;
+  }
 }

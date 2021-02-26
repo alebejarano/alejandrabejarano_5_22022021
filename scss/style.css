@@ -10935,11 +10935,38 @@ a:hover {
 .icons-menu {
   display: inline;
   float: right;
-  -webkit-transform: translate(0px, 39px);
-          transform: translate(0px, 39px);
+  /*transform: translate(0px, 39px);*/
+}
+
+.icon-nav-1 {
+  font-size: 1.2em;
+  -webkit-transform: translate(-15px, 39px);
+          transform: translate(-15px, 39px);
+}
+
+.icon-nav-2 {
+  font-size: 1.2em;
+  -webkit-transform: translate(6px, 39px);
+          transform: translate(6px, 39px);
 }
 
 .teddie-name {
   color: #A4B1C5;
+}
+
+.img-logo {
+  width: 200px;
+}
+
+@media (max-width: 420px) {
+  .img-logo {
+    width: 70%;
+  }
+}
+
+@media (min-width: 640px) {
+  .img-logo {
+    width: 50%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
