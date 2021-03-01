@@ -28,7 +28,7 @@ function addProduct(product) {
   }
 
   if (cartItems != null) {
-    if (cartItems[product] === undefined) {
+    if (cartItems[product._id] === undefined) {
       cartItems = {
         ...cartItems,
         [product._id]: {
