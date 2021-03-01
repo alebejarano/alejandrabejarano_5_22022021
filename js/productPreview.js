@@ -23,19 +23,20 @@ function getSingleProduct() {
                         <select name="colors" id="color-select">
                             ${colorOptions}
                         </select>
-                        <button type="button" class="btn  btn-light  py-1 px-3 product-preview">AJOUTER AU PANIER</button>
+                        <button type="button" class="btn  btn-light  py-1 px-3 product-preview" data-product-id="${teddie._id}">AJOUTER AU PANIER</button>
                     </div>
                 </div>
             </div>
         </div>
         `;
         document.getElementById('preview').innerHTML = preview; 
-        // to add to the cart the selected teddie
-        let addToCart = document.querySelectorAll('.product-preview');
-        console.log(addToCart);
-        addToCart.forEach(product => {
-            product.addEventListener('click', () => {
-                console.log('Hi');
+        // to add to the cart the selected product
+        let addToCarts = document.querySelectorAll('.product-preview');
+        console.log(addToCarts);
+        addToCarts.forEach(productButton => {
+            productButton.addEventListener('click', () => {
+                let productId = productButton.getAttribute("data-product-id")
+                addProduct(productId);
             })
         });
     });
