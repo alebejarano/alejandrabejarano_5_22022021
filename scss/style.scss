@@ -87,17 +87,17 @@ a:hover {
     width: 50%;
   }
 }
-.items-in-cart {
+#items-in-cart {
   width: 20px;
   height: 20px;
   border-radius: 50%;
   background-color: $link-hover;
   color: $color-link;
   transform: translate(22px, 9px);
-  display: flex;
   justify-content: center;
   align-items: center;
   font-size: small;
+  display: none;
 }
 .cart-text {
   font-size: 0.9em;

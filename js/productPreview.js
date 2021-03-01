@@ -17,8 +17,10 @@ function getSingleProduct() {
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title teddie-name">${teddie.name}</h5>
-                        <p class="card-text">${teddie.description}</p>
                         <p class="card-text">${teddie.price}&euro;</p>
+                        <hr>
+                        <p class="card-text">${teddie.description}</p>
+                        <hr>
                         <label for="color-select">Choix des Coleurs:</label>
                         <select name="colors" id="color-select">
                             ${colorOptions}
@@ -32,7 +34,6 @@ function getSingleProduct() {
         document.getElementById('preview').innerHTML = preview; 
         // to add to the cart the selected product
         let addToCarts = document.querySelectorAll('.product-preview');
-        console.log(addToCarts);
         addToCarts.forEach(productButton => {
             productButton.addEventListener('click', () => {
                 let productId = productButton.getAttribute("data-product-id")

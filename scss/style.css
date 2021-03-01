@@ -10970,7 +10970,7 @@ a:hover {
   }
 }
 
-.items-in-cart {
+#items-in-cart {
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -10978,9 +10978,6 @@ a:hover {
   color: #5A3A4D;
   -webkit-transform: translate(22px, 9px);
           transform: translate(22px, 9px);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -10988,6 +10985,7 @@ a:hover {
       -ms-flex-align: center;
           align-items: center;
   font-size: small;
+  display: none;
 }
 
 .cart-text {

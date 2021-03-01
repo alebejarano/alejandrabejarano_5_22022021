@@ -17,28 +17,47 @@ class ApiHelpers {
 }
 // to add the selected product to the cart
 function addProduct(productId) {
-  let cartItems = localStorage.getItem('productsInCart');
-  cartItems = JSON.parse(cartItems);
+  let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
+  console.log(cartItems);
+  let totalItems = localStorage.getItem('totalProducts');
 
-  if(cartItems != null) {
+  if (totalItems != null) {
+    totalItems++;
+  }  else {
+    totalItems = 1;
+  }
 
-      if(cartItems[productId] == undefined) {
-          
-          cartItems = {
-              ...cartItems,
-              [productId]: {
-                  quantity: 1
-              }
-          }
-      } else {
-          cartItems[productId].quantity += 1;
-      }
-  } else {
+  if (cartItems != null) {
+    if (cartItems[productId] === undefined) {
       cartItems = {
-          [productId]: {
-              quantity: 1
-          }
+        ...cartItems,
+        [productId]: {
+          quantity: 1
+        }
       }
+    } else {
+      cartItems[productId].quantity += 1;
+    }
+  } else {
+    cartItems = {
+      [productId]: {
+        quantity: 1
+      }
+    }
   }
   localStorage.setItem('productsInCart', JSON.stringify (cartItems));
+  localStorage.setItem('totalProducts', totalItems);
+  displayCartCounter();
 }
+// to handle the display of the cart number items that appears in the cart item on the header section
+function displayCartCounter() {
+  let counterBubble = document.getElementById('items-in-cart');
+  let totalItems = localStorage.getItem('totalProducts');
+  if (totalItems != null && totalItems > 0) {
+    counterBubble.innerText = totalItems;
+    counterBubble.style.display = 'flex';
+  } else {
+    counterBubble.style.display = 'none';
+  }
+}
+displayCartCounter();
