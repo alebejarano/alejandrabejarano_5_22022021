@@ -23,7 +23,7 @@ function getSingleProduct() {
                         <select name="colors" id="color-select">
                             ${colorOptions}
                         </select>
-                        <button type="button" class="btn  btn-light  py-1 px-3 product-preview" data-product-id="${teddie._id}">AJOUTER AU PANIER</button>
+                        <button type="button" class="btn  btn-light cart-text py-1 px-3 product-preview" data-product-id="${teddie._id}">Ajouter au Panier</button>
                     </div>
                 </div>
             </div>
