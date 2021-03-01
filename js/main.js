@@ -15,10 +15,10 @@ class ApiHelpers {
     }
   }
 }
+
 // to add the selected product to the cart
-function addProduct(productId) {
+function addProduct(product) {
   let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
-  console.log(cartItems);
   let totalItems = localStorage.getItem('totalProducts');
 
   if (totalItems != null) {
@@ -28,19 +28,21 @@ function addProduct(productId) {
   }
 
   if (cartItems != null) {
-    if (cartItems[productId] === undefined) {
+    if (cartItems[product] === undefined) {
       cartItems = {
         ...cartItems,
-        [productId]: {
+        [product._id]: {
+          ...product,
           quantity: 1
         }
       }
     } else {
-      cartItems[productId].quantity += 1;
+      cartItems[product._id].quantity += 1;
     }
   } else {
     cartItems = {
-      [productId]: {
+      [product._id]: {
+        ...product,
         quantity: 1
       }
     }
