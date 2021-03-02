@@ -1,11 +1,37 @@
-/*function displayCart() {
-    
-    let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
-    let totalItems = localStorage.getItem('totalProducts');
-    let cartContainer = document.getElementById('preview');
-    
-    if (cartItems != null) {
+let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
+let productContainer = document.getElementById('cartProducts');
+let totalPrice = 0;
 
-    }
-}*/
-
+if (cartItems != null) {
+  Object.values(cartItems).map(item => {
+    const product = document.createElement('div');
+    product.classList.add('row');
+    product.innerHTML +=
+      `<div class="col-sm">
+            <img src="${item.imageUrl}" width="100">
+        </div>
+        <div class="col-sm">
+            <p class="">${item.name}</p>
+        </div>
+        <div class="col-sm">
+            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-light">-</button>
+                <button type="button" class="btn btn-light">0</button>
+                <button type="button" class="btn btn-light">+</button>
+            </div>
+            <span class="ml-2"><i class="fas fa-times"></i></span>
+        </div>
+        <div class="col-sm">
+            ${item.price}&euro;
+        </div>
+        <hr class="line-break">
+        `
+    productContainer.appendChild(product);
+    totalPrice += item.price * item.quantity;
+  });
+  const totalPriceContainer = document.createElement('div');
+  totalPriceContainer.classList.add('d-flex', 'justify-content-end', 'mr-5');
+  totalPriceContainer.innerHTML +=
+    `Total: ${totalPrice}&euro;`;
+  productContainer.appendChild(totalPriceContainer);
+}
