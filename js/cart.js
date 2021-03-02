@@ -7,21 +7,21 @@ if (cartItems != null) {
     const product = document.createElement('div');
     product.classList.add('row');
     product.innerHTML +=
-      `<div class="col-sm">
+      `<div class=" col col-sm">
             <img src="${item.imageUrl}" width="100">
         </div>
-        <div class="col-sm">
+        <div class="col col-sm">
             <p class="">${item.name}</p>
         </div>
-        <div class="col-sm">
-            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+        <div class="col col-sm">
+            <div class="btn-group btn-group-sm" role="group" aria-label="augmenter ou réduire la quantité">
                 <button type="button" class="btn btn-light">-</button>
                 <button type="button" class="btn btn-light">0</button>
                 <button type="button" class="btn btn-light">+</button>
             </div>
-            <span class="ml-2"><i class="fas fa-times"></i></span>
+            <span class="ml-2"><i class="fas fa-times" title="supprimer"></i></span>
         </div>
-        <div class="col-sm">
+        <div class="col col-sm">
             ${item.price}&euro;
         </div>
         <hr class="line-break">

@@ -10935,6 +10935,8 @@ a:hover {
 .icons-menu {
   display: inline;
   float: right;
+  -webkit-transform: translate(0px, -16px);
+          transform: translate(0px, -16px);
   /*transform: translate(0px, 39px);*/
 }
 
@@ -10956,15 +10958,12 @@ a:hover {
 
 .img-logo {
   width: 200px;
+  /*@media (min-width: 640px) {
+    width: 50%;
+  }*/
 }
 
 @media (max-width: 420px) {
-  .img-logo {
-    width: 70%;
-  }
-}
-
-@media (min-width: 640px) {
   .img-logo {
     width: 50%;
   }
@@ -10994,5 +10993,16 @@ a:hover {
 
 .line-break {
   width: 100%;
+}
+
+.logo {
+  display: block;
+  text-align: center;
+}
+
+.menu {
+  display: table;
+  /* Allow the centering to work */
+  margin: 0 auto;
 }
 /*# sourceMappingURL=style.css.map */

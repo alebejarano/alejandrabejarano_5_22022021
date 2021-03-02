@@ -65,6 +65,7 @@ a:hover {
 .icons-menu {
   display: inline;
   float: right;
+  transform: translate(0px, -16px);
   /*transform: translate(0px, 39px);*/ 
 }
 .icon-nav-1 {
@@ -81,11 +82,11 @@ a:hover {
 .img-logo {
   width: 200px;
   @media (max-width: 420px) {
-    width: 70%;
-  }
-  @media (min-width: 640px) {
     width: 50%;
   }
+  /*@media (min-width: 640px) {
+    width: 50%;
+  }*/
 }
 #items-in-cart {
   width: 20px;
@@ -104,4 +105,12 @@ a:hover {
 }
 .line-break {
   width: 100%;
+}
+.logo {
+  display: block;
+  text-align: center;
+}
+.menu {
+  display: table;   /* Allow the centering to work */
+	margin: 0 auto;
 }
