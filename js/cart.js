@@ -31,11 +31,19 @@ function displayCart() {
       productContainer.appendChild(product);
       totalPrice += item.price * item.quantity;
     });
+
     const totalPriceContainer = document.createElement('div');
-    totalPriceContainer.classList.add('d-flex', 'justify-content-end', 'mr-5');
-    totalPriceContainer.innerHTML +=
+    if (totalPrice > 0) {
+      totalPriceContainer.classList.add('d-flex', 'justify-content-end', 'mr-5');
+      totalPriceContainer.innerHTML +=
       `Total: ${totalPrice}&euro;`;
+    } else {
+      totalPriceContainer.classList.add('d-flex', 'justify-content-center');
+      totalPriceContainer.innerHTML +=
+      `Votre panier est vide`;
+    }
     productContainer.appendChild(totalPriceContainer);
+      
 
     document.querySelectorAll('.decrease').forEach(decrease => {
       decrease.addEventListener('click', () => {
