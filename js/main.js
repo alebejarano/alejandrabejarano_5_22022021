@@ -20,7 +20,7 @@ class ApiHelpers {
 function addProduct(product) {
   let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
   let totalItems = localStorage.getItem('totalProducts');
-  let itemPrice = localStorage.getItem('totalCost');
+  let totalPrice = localStorage.getItem('totalCost');
 
   if (totalItems != null) {
     totalItems++;
@@ -48,9 +48,9 @@ function addProduct(product) {
       }
     }
   }
-  if(itemPrice != null) {
-    itemPrice = parseInt(itemPrice);
-    localStorage.setItem('totalCost', itemPrice + product.price);
+  if(totalPrice != null) {
+    totalPrice = parseInt(totalPrice);
+    localStorage.setItem('totalCost', totalPrice + product.price);
 } else {
     localStorage.setItem('totalCost', product.price);
 }

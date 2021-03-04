@@ -10953,7 +10953,7 @@ a:hover {
 }
 
 .teddie-name {
-  color: #A4B1C5;
+  color: #5A3A4D;
 }
 
 .img-logo {
@@ -11004,5 +11004,9 @@ a:hover {
   display: table;
   /* Allow the centering to work */
   margin: 0 auto;
+}
+
+.delete {
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
