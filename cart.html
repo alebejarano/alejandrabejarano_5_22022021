@@ -23,7 +23,8 @@
                 </a>
                 <div id="items-in-cart">0</div>
             </div>
-            <div class="icons-menu"><a class="nav-link color-link" href="#" ><i class="fas fa-heart icon-nav-2"></i></a></div>
+            <div class="icons-menu"><a class="nav-link color-link" href="#"><i class="fas fa-heart icon-nav-2"></i></a>
+            </div>
             <a class="logo" href="index.html">
                 <img src="orinico-copy.png" alt="logo du site" class="img-logo">
             </a>
@@ -31,20 +32,48 @@
                 <div class="">
                     <ul class="nav pr-lg-5">
                         <li class="nav-item active">
-                            <a class="nav-link color-link" href="index.html"><span>T</span><span>e</span><span>e</span><span>d</span><span>i</span><span>e</span><span>s</span><span class="sr-only">(current)</span></a>
+                            <a class="nav-link color-link"
+                                href="index.html"><span>T</span><span>e</span><span>e</span><span>d</span><span>i</span><span>e</span><span>s</span><span
+                                    class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link color-link" href="#"><span>C</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span></a>
+                            <a class="nav-link color-link"
+                                href="#"><span>C</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span></a>
                         </li>
                     </ul>
                 </div>
             </nav>
-        </div>    
+        </div>
     </header>
     <main>
         <div id="cartProducts" class="container mt-4">
             <!---Item in cart will appear-->
         </div>
+        <hr>
+        <h2 class="ml-3 mt-4">Coordonées</h2>
+        <form action="api/teddies/order" method="POST" class="m-3">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" id="email" name="custumer_mail" aria-describedby="emailHelp" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Nom</label>
+                <input type="text" name="lastName" class="form-control" id="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="firstName">Prénom</label>
+                <input type="text" name="firstName" class="form-control" id="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Adress</label>
+                <input type="text" name="address" class="form-control" id="address" required>
+            </div>
+            <div class="form-group">
+                <label for="city">Ville</label>
+                <input type="text" name="city" class="form-control" id="city" required>
+            </div>
+            <button type="submit" class="btn btn-secondary">Valider</button>
+        </form>
     </main>
     <footer class="mt-2">
         <div class="container-fluid footer-background p-4">

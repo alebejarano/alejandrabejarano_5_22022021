@@ -38,7 +38,7 @@ function displayCart() {
       totalPriceContainer.innerHTML +=
       `Total: ${totalPrice}&euro;`;
     } else {
-      totalPriceContainer.classList.add('d-flex', 'justify-content-center');
+      totalPriceContainer.classList.add('d-flex', 'justify-content-center', 'text-muted');
       totalPriceContainer.innerHTML +=
       `Votre panier est vide`;
     }

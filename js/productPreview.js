@@ -23,7 +23,7 @@ ApiHelpers.get(`http://localhost:3000/api/teddies/${productId}`)
                         <select name="colors" id="color-select">
                             ${colorOptions}
                         </select>
-                        <button type="button" class="btn  btn-light cart-text py-1 px-3 product-preview" id="add-to-cart-button">Ajouter au Panier</button>
+                        <button type="button" class="btn  btn-secondary cart-text py-1 px-3 mt-3 product-preview" id="add-to-cart-button">Ajouter au Panier</button>
                     </div>
                 </div>
             </div>
