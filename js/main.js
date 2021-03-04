@@ -14,6 +14,22 @@ class ApiHelpers {
       console.log(err);
     }
   }
+  static post = async (url, data) => {
+    try {
+      let res = await fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(data)
+      });
+      if (res.ok) {
+        let data = await res.json();
+        return data;
+      } else {
+        console.log(`Une erreur s'est produite: ${res.status}`);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
 }
 
 // to add the selected product to the cart
@@ -58,7 +74,7 @@ function addProduct(product) {
   localStorage.setItem('totalProducts', totalItems);
   displayCartCounter();
 }
-// to handle the display of the cart number items that appears in the cart item on the header section
+// to handle the display of the number of items that appears in the cart icon on the header section
 function displayCartCounter() {
   let counterBubble = document.getElementById('items-in-cart');
   let totalItems = localStorage.getItem('totalProducts');

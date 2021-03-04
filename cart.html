@@ -51,28 +51,28 @@
         </div>
         <hr>
         <h2 class="ml-3 mt-4">Coordonées</h2>
-        <form action="api/teddies/order" method="POST" class="m-3">
-            <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" class="form-control" id="email" name="custumer_mail" aria-describedby="emailHelp" required>
-            </div>
+        <form method="POST" class="m-3">
             <div class="form-group">
                 <label for="lastName">Nom</label>
-                <input type="text" name="lastName" class="form-control" id="lastName" required>
+                <input type="text" name="lastName" class="form-control" id="lastName" aria-required=”true”>
             </div>
             <div class="form-group">
                 <label for="firstName">Prénom</label>
-                <input type="text" name="firstName" class="form-control" id="firstName" required>
+                <input type="text" name="firstName" class="form-control" id="firstName" aria-required=”true”>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" id="email" name="custumer_mail" aria-describedby="emailHelp" aria-required=”true”>
             </div>
             <div class="form-group">
                 <label for="address">Adress</label>
-                <input type="text" name="address" class="form-control" id="address" required>
+                <input type="text" name="address" class="form-control" id="address" aria-required=”true”>
             </div>
             <div class="form-group">
                 <label for="city">Ville</label>
-                <input type="text" name="city" class="form-control" id="city" required>
+                <input type="text" name="city" class="form-control" id="city" aria-required=”true”>
             </div>
-            <button type="submit" class="btn btn-secondary">Valider</button>
+            <button type="submit" class="btn btn-secondary" id="redirect">Valider</button>
         </form>
     </main>
     <footer class="mt-2">

@@ -88,4 +88,21 @@ function deleteItem(itemId, quantityToDelete) {
     displayCartCounter();
   }
 }
+
+function redirectToOrderConfirmation() {
+  const formElement = document.querySelector('form');
+  document.getElementById('redirect').addEventListener('click', (event) => {
+    event.preventDefault();
+    const contact = new FormData(formElement);
+    const cartItems = JSON.parse(localStorage.getItem('productsInCart'));
+    const data = {
+      contact: contact,
+      products: Object.keys(cartItems)
+    }
+    ApiHelpers.post('http://localhost:3000/api/teddies/order', data).then((data) => {
+    console.log(data); 
+    //window.location.href = '';
+    })
+  }, false);
+}
 displayCart();
