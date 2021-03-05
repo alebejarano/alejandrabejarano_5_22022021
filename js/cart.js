@@ -90,8 +90,8 @@ function deleteItem(itemId, quantityToDelete) {
 }
 
 function redirectToOrderConfirmation() {
-  const formElement = document.querySelector('form');
-  document.getElementById('redirect').addEventListener('click', (event) => {
+  const formElement = document.getElementByI('form');
+  formElement.addEventListener('submit', (event) => {
     event.preventDefault();
     const contact = new FormData(formElement);
     const cartItems = JSON.parse(localStorage.getItem('productsInCart'));
@@ -103,6 +103,7 @@ function redirectToOrderConfirmation() {
     console.log(data); 
     //window.location.href = '';
     })
-  }, false);
+  });
 }
 displayCart();
+//document.getElementById('redirect')

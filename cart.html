@@ -54,7 +54,7 @@
         <div class="container">
             <div class="row justify-content-lg-center">
                 <div class="col-lg-6">
-                    <form method="POST" class="m-3">
+                    <form method="POST" class="m-3" id="form">
                         <div class="form-group">
                             <label for="lastName">Nom</label>
                             <input type="text" name="lastName" class="form-control" id="lastName" aria-required=”true” required>
@@ -63,9 +63,10 @@
                             <label for="firstName">Prénom</label>
                             <input type="text" name="firstName" class="form-control" id="firstName" aria-required=”true” required>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" id="mail">
                             <label for="email">E-mail</label>
                             <input type="email" class="form-control" id="email" name="custumer_mail" aria-describedby="emailHelp" aria-required=”true” required>
+                            <span id="error-input"></span>
                         </div>
                         <div class="form-group">
                             <label for="address">Adresse</label>
@@ -119,3 +120,4 @@
     </footer>
 </body>
 </html>
+
