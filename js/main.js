@@ -14,6 +14,7 @@ class ApiHelpers {
       console.log(err);
     }
   }
+  // to send data to api
   static post = async (url, data) => {
     try {
       let res = await fetch(url, {
