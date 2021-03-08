@@ -1,151 +1,20 @@
 @import "./utils/variables";
+@import "./base/base";
+@import "./components/components";
+@import "./layouts/header.scss";
+@import "./layouts/footer.scss";
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
 
-html, body {
-  height: 100%;
-}
-body {
-  display: flex;
-  flex-direction: column;
-}
-main {
-  flex: 1 0 auto;
-}
-footer {
-  flex-shrink: 0;
-}
-.header-background  {
-    background-color: $header-background;
-}
-.footer-background {
-    background-color: $footer-background;
-}
 
-.color-link {
-    color: $color-link;
-    span{
-        transition: all .5s;
-      }
-      span:nth-child(2){
-        transition-delay: .1s;
-      }
-      span:nth-child(3){
-        transition-delay: .2s;
-      }
-      span:nth-child(4){
-        transition-delay: .3s;
-      }
-      &:hover{
-        span{
-          font-weight: 700;
-        }
-        span:nth-child(4){
-          transition-delay: .3s;
-        }
-        span:nth-child(3){
-          transition-delay: .2s;
-        }
-        span:nth-child(2){
-          transition-delay: .1s;
-        }
-        span:nth-child(1){
-          transition-delay: 0s;
-        }
-      }
-}
-a:hover {
-  color: $link-hover;
-}
-.icon-nav {
-    font-size: 1.2em;
-}
-.card-flex {
-  flex: 1
-}
-.icons-menu {
-  display: inline;
-  float: right;
-  transform: translate(0px, -16px);
-}
-.icon-nav-1 {
-  font-size: 1.2em;
-  transform: translate(-15px, 39px);
-  margin-right: 1.5rem;
-}
-.icon-nav-2 {
-  font-size: 1.2em;
-  transform: translate(6px, 39px);
-}
-.teddie-name {
-  color: $teddies-name;
-}
-.logo {
-  display: block;
-  text-align: center;
-  @media (min-width: 768px) {
-  text-align: initial;
-  margin-left: 50px;
-  }
-}
-.img-logo {
-  width: 200px;
-  @media (max-width: 420px) {
-    width: 50%;
-  }
-  /*@media (min-width: 640px) {
-    width: 50%;
-  }*/
-}
 
-#items-in-cart {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: $link-hover;
-  color: $color-link;
-  transform: translate(22px, 9px);
-  justify-content: center;
-  align-items: center;
-  font-size: small;
-  display: none;
-}
-.cart-text {
-  font-size: 0.9em;
-}
-.line-break {
-  width: 100%;
-}
-.menu {
-  @media (max-width: 767px){
-    display: table;   /* Allow the centering to work */
-    margin: 0 auto;
-  }
-  @media (min-width: 768px) {
-  display: inline-block;
-  top: 1.5rem;
-  position: absolute;
-  right: 10rem;
-  }
-}
-.delete {
-  cursor: pointer;
-}
-.invalid {
-  input {
-    border-color: red;
-  }
-}
-.error-message {
-  color: red;
-}
-#notification {
-  display: flex;
-  justify-content: center;
-  &.success {
-    color: #356759;
-  }
-  &.error {
-    color: red;
-  }
-}
+
+
+
+
+
+
+
+
+
+

@@ -15,10 +15,10 @@ function getProducts() {
             </a> 
               <div class="card-body">
                 <a href="productPreview.html?id=${teddie._id}">
-                  <p class="card-title text-center color-link">${teddie.name}</p>
+                  <p class="card-title text-center link-style">${teddie.name}</p>
                 </a>   
                 <p class="d-none">${teddie._id}</p>
-                <p class="card-text text-center color-link">${teddie.price}&euro;</p>
+                <p class="card-text text-center link-style">${teddie.price}&euro;</p>
               </div> 
           </div> 
             `;

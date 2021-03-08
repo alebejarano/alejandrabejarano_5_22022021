@@ -1,0 +1,37 @@
+//to get the same height in the card bootstrap class- where all the tedies are shown up
+.card-flex {
+  flex: 1
+}
+.teddie-name {
+  color: $teddies-name;
+}
+// the size for the 'Ajouter au panier' button
+.cart-text {
+  font-size: 0.9em;
+}
+//the line that separates the products in cart page and the total
+.line-break {
+  width: 100%;
+}
+
+.delete {
+  cursor: pointer;
+}
+.invalid {
+  input {
+  border-color: red;
+  }
+}
+.error-message {
+  color: red;
+}
+#notification {
+  display: flex;
+  justify-content: center;
+  &.success {
+    color: #356759;
+  }
+  &.error {
+    color: red;
+  }
+}
