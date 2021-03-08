@@ -1,9 +1,10 @@
 @import "./utils/variables";
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import "./base/base";
 @import "./components/components";
 @import "./layouts/header.scss";
 @import "./layouts/footer.scss";
-@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
 
 
 
