@@ -11009,4 +11009,29 @@ a:hover {
 .delete {
   cursor: pointer;
 }
+
+.invalid input {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+}
+
+#notification {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#notification.success {
+  color: #356759;
+}
+
+#notification.error {
+  color: red;
+}
 /*# sourceMappingURL=style.css.map */

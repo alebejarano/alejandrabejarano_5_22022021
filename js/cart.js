@@ -36,29 +36,29 @@ function displayCart() {
     if (totalPrice > 0) {
       totalPriceContainer.classList.add('d-flex', 'justify-content-end', 'mr-5');
       totalPriceContainer.innerHTML +=
-      `Total: ${totalPrice}&euro;`;
+        `Total: ${totalPrice}&euro;`;
     } else {
       totalPriceContainer.classList.add('d-flex', 'justify-content-center', 'text-muted');
       totalPriceContainer.innerHTML +=
-      `Votre panier est vide`;
+        `Votre panier est vide`;
     }
     productContainer.appendChild(totalPriceContainer);
-      
+
 
     document.querySelectorAll('.decrease').forEach(decrease => {
       decrease.addEventListener('click', () => {
         deleteItem(decrease.getAttribute('data-product'), 1);
-      displayCart();
+        displayCart();
       })
     })
-  
+
     document.querySelectorAll('.increase').forEach(increase => {
       increase.addEventListener('click', () => {
         addProduct(cartItems[increase.getAttribute('data-product')]);
         displayCart();
       })
     })
-  
+
     document.querySelectorAll('.delete').forEach(deleteAll => {
       deleteAll.addEventListener('click', () => {
         deleteItem(deleteAll.getAttribute('data-product'), cartItems[deleteAll.getAttribute('data-product')].quantity);
@@ -82,17 +82,17 @@ function deleteItem(itemId, quantityToDelete) {
     if (productsInCart[itemId].quantity === 0) {
       delete productsInCart[itemId];
     }
-    
+
     localStorage.setItem('productsInCart', JSON.stringify(productsInCart));
     displayCart();
     displayCartCounter();
   }
 }
-
-function redirectToOrderConfirmation() {
-  const formElement = document.getElementByI('form');
-  formElement.addEventListener('submit', (event) => {
-    event.preventDefault();
+// to redirect the submit button to the order confirmation page 
+const formElement = document.getElementById('form');
+formElement.addEventListener('submit', (event) => {
+  event.preventDefault();
+  if (formIsValid()) {
     const contact = new FormData(formElement);
     const cartItems = JSON.parse(localStorage.getItem('productsInCart'));
     const data = {
@@ -100,10 +100,53 @@ function redirectToOrderConfirmation() {
       products: Object.keys(cartItems)
     }
     ApiHelpers.post('http://localhost:3000/api/teddies/order', data).then((data) => {
-    console.log(data); 
-    //window.location.href = '';
+      console.log(data);
+      //window.location.href = '';
     })
-  });
-}
+  }
+});
+
 displayCart();
 //document.getElementById('redirect')
+
+// regular expressions for the form validation in cart page
+function formIsValid() {
+  const form = document.getElementById('form');
+  let formInputs = document.querySelectorAll('#form input');
+  console.log(formInputs);
+  let mailInput = document.getElementById('email');
+  let numOfErrors = 0;
+  const mailPattern = /^[a-z0-9.-_]+@[a-z0-9-]+\.[a-z]{2,4}$/i;
+  const namePattern = /^[a-z- ]+$/;
+
+
+  formInputs.forEach(input => {
+    //console.log(input.id);
+    switch (input.id) {
+      case 'lastName':
+      case 'firstName':
+        if (!input.value.match(namePattern)) {
+          invalidateField(input, 'Champs invalide');
+          numOfErrors++;
+        }
+        break;
+      case 'email':
+        if (!mailInput.value.match(mailPattern)) {
+          invalidateField(input, 'Adresse email invalide. Ex adresse email valide : jhon@hotmail.com');
+          numOfErrors++;
+        }
+        break;
+      case 'address':
+      case 'city':
+        if (input.value === '') {
+          invalidateField(input, 'Ce champs est requis');
+        }
+    }
+  });
+  return numOfErrors === 0;
+}
+// if the input is not valid the error message and invalid class will appear
+function invalidateField(input, message) {
+  input.parentElement.classList.add('invalid');
+  input.nextSibling.nextSibling.innerText = message;
+}
