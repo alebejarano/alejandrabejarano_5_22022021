@@ -1,3 +1,4 @@
+// to display the selected products to buy
 function displayCart() {
   let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
   let productContainer = document.getElementById('cartProducts');
@@ -66,7 +67,7 @@ function displayCart() {
     });
   }
 }
-
+// to delete items in cart page
 function deleteItem(itemId, quantityToDelete) {
   let productsInCart = localStorage.getItem('productsInCart');
   if (productsInCart != null) {
@@ -107,7 +108,6 @@ formElement.addEventListener('submit', (event) => {
 });
 
 displayCart();
-//document.getElementById('redirect')
 
 // regular expressions for the form validation in cart page
 function formIsValid() {

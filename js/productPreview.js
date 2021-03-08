@@ -1,3 +1,4 @@
+// to show the  chosen product that appears in Teddies in a single page (preview the indivudual product before adding to the cart)
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get('id');
 ApiHelpers.get(`http://localhost:3000/api/teddies/${productId}`)
@@ -23,7 +24,7 @@ ApiHelpers.get(`http://localhost:3000/api/teddies/${productId}`)
                         <select name="colors" id="color-select">
                             ${colorOptions}
                         </select>
-                        <button type="button" class="btn  btn-secondary cart-text py-1 px-3 mt-3 product-preview" id="add-to-cart-button">Ajouter au Panier</button>
+                        <button type="button" class="btn btn-secondary d-block cart-text py-1 px-3 mt-3 product-preview" id="add-to-cart-button">Ajouter au Panier</button>
                     </div>
                 </div>
             </div>

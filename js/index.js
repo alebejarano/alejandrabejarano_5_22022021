@@ -1,3 +1,4 @@
+// products container div in index.html
 let productsContainer = document.getElementById('productsContainer');
 
 // for all the products to display in Teddies (index.html)

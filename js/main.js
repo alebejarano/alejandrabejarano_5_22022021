@@ -14,7 +14,7 @@ class ApiHelpers {
       console.log(err);
     }
   }
-  // to send data to api
+  // to send data to the api
   static post = async (url, data) => {
     try {
       let res = await fetch(url, {
@@ -73,7 +73,7 @@ function addProduct(product) {
 }
   localStorage.setItem('productsInCart', JSON.stringify (cartItems));
   localStorage.setItem('totalProducts', totalItems);
-  displayCartCounter();
+  displayCartCounter(); //cart icon on the header
   notify('Votre produit a bien été ajoute au panier', 'success');
 }
 // to handle the display of the number of items that appears in the cart icon on the header section
