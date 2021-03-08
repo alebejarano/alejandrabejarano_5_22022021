@@ -10937,13 +10937,13 @@ a:hover {
   float: right;
   -webkit-transform: translate(0px, -16px);
           transform: translate(0px, -16px);
-  /*transform: translate(0px, 39px);*/
 }
 
 .icon-nav-1 {
   font-size: 1.2em;
   -webkit-transform: translate(-15px, 39px);
           transform: translate(-15px, 39px);
+  margin-right: 1.5rem;
 }
 
 .icon-nav-2 {
@@ -10954,6 +10954,18 @@ a:hover {
 
 .teddie-name {
   color: #5A3A4D;
+}
+
+.logo {
+  display: block;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    text-align: initial;
+    margin-left: 50px;
+  }
 }
 
 .img-logo {
@@ -10995,15 +11007,21 @@ a:hover {
   width: 100%;
 }
 
-.logo {
-  display: block;
-  text-align: center;
+@media (max-width: 767px) {
+  .menu {
+    display: table;
+    /* Allow the centering to work */
+    margin: 0 auto;
+  }
 }
 
-.menu {
-  display: table;
-  /* Allow the centering to work */
-  margin: 0 auto;
+@media (min-width: 768px) {
+  .menu {
+    display: inline-block;
+    top: 1.5rem;
+    position: absolute;
+    right: 10rem;
+  }
 }
 
 .delete {
