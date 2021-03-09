@@ -31,9 +31,11 @@
 .error-message {
   color: red;
 }
+// notification message your product was succesfully added to cart
 #notification {
   display: flex;
   justify-content: center;
+  margin-bottom: 2rem;
   &.success {
     color: #356759;
   }

@@ -73,7 +73,7 @@ function addProduct(product) {
 }
   localStorage.setItem('productsInCart', JSON.stringify (cartItems));
   localStorage.setItem('totalProducts', totalItems);
-  displayCartCounter(); //cart icon on the header
+  displayCartCounter(); 
   notify('Votre produit a bien été ajoute au panier', 'success');
 }
 // to handle the display of the number of items that appears in the cart icon on the header section

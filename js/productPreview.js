@@ -35,9 +35,10 @@ ApiHelpers.get(`http://localhost:3000/api/teddies/${productId}`)
       addProduct(teddie);
     });
   });
-  // to create messages notifications
-  function notify(message, type) {
-    let notification = document.getElementById('notification');
-    notification.innerText = message;
-    notification.classList.add(type);
-  }
+ 
+   // to create messages notifications
+ function notify(message, type) {
+  let notification = document.getElementById('notification');
+  notification.innerText = message;
+  notification.classList.add(type);
+}
