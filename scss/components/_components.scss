@@ -13,6 +13,12 @@
 .line-break {
   width: 100%;
 }
+//select colors button 
+.form-control {
+  @media (min-width: 992px) {
+    width: 50%;
+  }
+}
 
 .delete {
   cursor: pointer;

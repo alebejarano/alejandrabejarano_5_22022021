@@ -10875,6 +10875,12 @@ main {
   width: 100%;
 }
 
+@media (min-width: 992px) {
+  .form-control {
+    width: 50%;
+  }
+}
+
 .delete {
   cursor: pointer;
 }
