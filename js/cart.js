@@ -105,9 +105,10 @@ formElement.addEventListener('submit', (event) => {
       contact: contact,
       products: Object.keys(cartItems)
     }
+    //send the data to the server and get a response with the order id that it redirects to the orderConfirmed page
     ApiHelpers.post('http://localhost:3000/api/teddies/order', data).then(response => {
       console.log(response);
-      window.location.assign(window.location.origin + '/orderConfirmed');
+      window.location.assign(window.location.origin + `/orderConfirmed.html?orderId=${response.orderId}`);
     })
   }
 });
@@ -123,7 +124,7 @@ function formIsValid() {
   let numOfErrors = 0;
   const mailPattern = /^[a-z0-9.-_]+@[a-z0-9-]+\.[a-z]{2,4}$/i;
   const namePattern = /^[a-z- ]+$/i;
-  const textPattern = /^[-'a-zÀ-ÖØ-öø-ÿ ]+$/i;
+  const textPattern = /^[-'a-z0-9À-ÖØ-öø-ÿ ]+$/i;
 
 
   formInputs.forEach(input => {
