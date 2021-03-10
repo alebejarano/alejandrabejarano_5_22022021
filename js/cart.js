@@ -94,20 +94,20 @@ const formElement = document.getElementById('form');
 formElement.addEventListener('submit', (event) => {
   event.preventDefault();
   if (formIsValid()) {
-    console.log(formElement);
-    const contact = new FormData(formElement);
-    console.log(...contact);
+    let contact = {};
+    document.querySelectorAll('#form input').forEach(input => {
+      Object.assign(contact, {
+        [input.getAttribute('name')]: input.value
+      });
+    });
     const cartItems = JSON.parse(localStorage.getItem('productsInCart'));
     const data = {
-      contact: {
-        firstName: 'john',
-        lastName: 'zeuhgzer'
-      },
+      contact: contact,
       products: Object.keys(cartItems)
     }
-    ApiHelpers.post('http://localhost:3000/api/teddies/order', data).then((data) => {
-      console.log(data);
-      //window.location.href = '';
+    ApiHelpers.post('http://localhost:3000/api/teddies/order', data).then(response => {
+      console.log(response);
+      window.location.assign(window.location.origin + '/orderConfirmed');
     })
   }
 });
@@ -122,9 +122,8 @@ function formIsValid() {
   let mailInput = document.getElementById('email');
   let numOfErrors = 0;
   const mailPattern = /^[a-z0-9.-_]+@[a-z0-9-]+\.[a-z]{2,4}$/i;
-  const namePattern = /^[a-z- ]+$/;
-  const addressPattern = /^[a-z0-9 ]+$/i;
-  const cityPattern = /^[a-z ]+$/i;
+  const namePattern = /^[a-z- ]+$/i;
+  const textPattern = /^[-'a-zÀ-ÖØ-öø-ÿ ]+$/i;
 
 
   formInputs.forEach(input => {
@@ -143,14 +142,11 @@ function formIsValid() {
         }
         break;
       case 'address':
-        if(!input.value.match(addressPattern)) {
+      case 'city':
+        if(!input.value.match(textPattern)) {
           invalidateField(input, 'Champs invalid ');
         }
         break;
-      case 'city':
-        if (!input.value.match(cityPattern)) {
-          invalidateField(input, 'Champs invalid');
-        }
     }
   });
   return numOfErrors === 0;
