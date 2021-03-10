@@ -33,12 +33,13 @@ ApiHelpers.get(`http://localhost:3000/api/teddies/${productId}`)
     document.getElementById('preview').innerHTML = preview;
     document.getElementById('add-to-cart-button').addEventListener('click', () => {
       addProduct(teddie);
+      notify('Votre produit a bien été ajoute au panier', 'success');
     });
   });
- 
-   // to create messages notifications
- function notify(message, type) {
+// to create messages notifications
+function notify(message, type) {
   let notification = document.getElementById('notification');
   notification.innerText = message;
   notification.classList.add(type);
-}
+} 
+

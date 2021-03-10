@@ -94,10 +94,15 @@ const formElement = document.getElementById('form');
 formElement.addEventListener('submit', (event) => {
   event.preventDefault();
   if (formIsValid()) {
+    console.log(formElement);
     const contact = new FormData(formElement);
+    console.log(...contact);
     const cartItems = JSON.parse(localStorage.getItem('productsInCart'));
     const data = {
-      contact: contact,
+      contact: {
+        firstName: 'john',
+        lastName: 'zeuhgzer'
+      },
       products: Object.keys(cartItems)
     }
     ApiHelpers.post('http://localhost:3000/api/teddies/order', data).then((data) => {

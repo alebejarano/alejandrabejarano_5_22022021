@@ -41,7 +41,7 @@ function addProduct(product) {
 
   if (totalItems != null) {
     totalItems++;
-  }  else {
+  } else {
     totalItems = 1;
   }
 
@@ -65,17 +65,17 @@ function addProduct(product) {
       }
     }
   }
-  if(totalPrice != null) {
+  if (totalPrice != null) {
     totalPrice = parseInt(totalPrice);
     localStorage.setItem('totalCost', totalPrice + product.price);
-} else {
+  } else {
     localStorage.setItem('totalCost', product.price);
-}
-  localStorage.setItem('productsInCart', JSON.stringify (cartItems));
+  }
+  localStorage.setItem('productsInCart', JSON.stringify(cartItems));
   localStorage.setItem('totalProducts', totalItems);
-  displayCartCounter(); 
-  notify('Votre produit a bien été ajoute au panier', 'success');
+  displayCartCounter();
 }
+
 // to handle the display of the number of items that appears in the cart icon on the header section
 function displayCartCounter() {
   let counterBubble = document.getElementById('items-in-cart');
