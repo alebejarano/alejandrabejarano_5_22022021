@@ -10876,7 +10876,7 @@ main {
 }
 
 @media (min-width: 992px) {
-  .form-control {
+  .color-choices {
     width: 50%;
   }
 }

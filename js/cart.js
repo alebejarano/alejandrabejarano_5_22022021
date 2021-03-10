@@ -118,10 +118,11 @@ function formIsValid() {
   let numOfErrors = 0;
   const mailPattern = /^[a-z0-9.-_]+@[a-z0-9-]+\.[a-z]{2,4}$/i;
   const namePattern = /^[a-z- ]+$/;
+  const addressPattern = /^[a-z0-9 ]+$/i;
+  const cityPattern = /^[a-z ]+$/i;
 
 
   formInputs.forEach(input => {
-    //console.log(input.id);
     switch (input.id) {
       case 'lastName':
       case 'firstName':
@@ -137,9 +138,13 @@ function formIsValid() {
         }
         break;
       case 'address':
+        if(!input.value.match(addressPattern)) {
+          invalidateField(input, 'Champs invalid ');
+        }
+        break;
       case 'city':
-        if (input.value === '') {
-          invalidateField(input, 'Ce champs est requis');
+        if (!input.value.match(cityPattern)) {
+          invalidateField(input, 'Champs invalid');
         }
     }
   });
