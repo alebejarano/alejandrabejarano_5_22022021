@@ -33,19 +33,6 @@ function displayCart() {
       totalPrice += item.price * item.quantity;
     });
 
-    const totalPriceContainer = document.createElement('div');
-    if (totalPrice > 0) {
-      totalPriceContainer.classList.add('d-flex', 'justify-content-end', 'mr-5');
-      totalPriceContainer.innerHTML +=
-        `Total: ${totalPrice}&euro;`;
-    } else {
-      totalPriceContainer.classList.add('d-flex', 'justify-content-center', 'text-muted');
-      totalPriceContainer.innerHTML +=
-        `Votre panier est vide`;
-    }
-    productContainer.appendChild(totalPriceContainer);
-
-
     document.querySelectorAll('.decrease').forEach(decrease => {
       decrease.addEventListener('click', () => {
         deleteItem(decrease.getAttribute('data-product'), 1);
@@ -66,7 +53,21 @@ function displayCart() {
       });
     });
   }
+  // calculates the total price or indicates if there is no items in cart
+  const totalPriceContainer = document.createElement('div');
+  if (totalPrice > 0) {
+    totalPriceContainer.classList.add('d-flex', 'justify-content-end', 'mr-5');
+    totalPriceContainer.innerHTML +=
+      `Total: ${totalPrice}&euro;`;
+  } else {
+    totalPriceContainer.classList.add('d-flex', 'justify-content-center', 'text-muted');
+    totalPriceContainer.innerHTML +=
+      `Votre panier est vide`;
+  }
+  productContainer.appendChild(totalPriceContainer);
 }
+ 
+
 // to delete items in cart page
 function deleteItem(itemId, quantityToDelete) {
   let productsInCart = localStorage.getItem('productsInCart');
@@ -89,9 +90,8 @@ function deleteItem(itemId, quantityToDelete) {
     displayCartCounter();
   }
 }
-// to redirect the submit button to the order confirmation page 
-const formElement = document.getElementById('form');
-formElement.addEventListener('submit', (event) => {
+//once the form is valid it will collect the data: contact as anobject and the id's od the items as an array to then be send to the api
+function checkout(event) {
   event.preventDefault();
   if (formIsValid()) {
     let contact = {};
@@ -101,17 +101,20 @@ formElement.addEventListener('submit', (event) => {
       });
     });
     const cartItems = JSON.parse(localStorage.getItem('productsInCart'));
+    //data is the object that will be sent to the api
     const data = {
       contact: contact,
-      products: Object.keys(cartItems)
+      products: Object.keys(cartItems)//it extracts only the keys of un object and returns an array. In productsInCart i passed as a key the id of each item
     }
     //send the data to the server and get a response with the order id that it redirects to the orderConfirmed page
     ApiHelpers.post('http://localhost:3000/api/teddies/order', data).then(response => {
-      console.log(response);
       window.location.assign(window.location.origin + `/orderConfirmed.html?orderId=${response.orderId}`);
     })
   }
-});
+}
+// to redirect the submit button to the order confirmation page calling the function checkout 
+const formElement = document.getElementById('form');
+formElement.addEventListener('submit', checkout);
 
 displayCart();
 
@@ -123,7 +126,7 @@ function formIsValid() {
   let mailInput = document.getElementById('email');
   let numOfErrors = 0;
   const mailPattern = /^[a-z0-9.-_]+@[a-z0-9-]+\.[a-z]{2,4}$/i;
-  const namePattern = /^[a-z- ]+$/i;
+  const namePattern = /^[a-z-À-ÖØ-öø-ÿ ]+$/i;
   const textPattern = /^[-'a-z0-9À-ÖØ-öø-ÿ ]+$/i;
 
 
