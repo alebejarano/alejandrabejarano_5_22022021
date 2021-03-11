@@ -13,6 +13,7 @@ window.localStorage.removeItem('totalProducts');
 backToHomeButton.addEventListener('click', () => {
     window.localStorage.clear();
 })
+// to actualize the (put to none) cart counter bubble in the cart icon
 displayCartCounter();
 }
 orderResume();
