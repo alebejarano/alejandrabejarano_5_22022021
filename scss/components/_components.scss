@@ -23,11 +23,13 @@
 .delete {
   cursor: pointer;
 }
+//invalid input form - class added dynamically 
 .invalid {
   input {
   border-color: red;
   }
 }
+// when the input value is not correct in the form
 .error-message {
   color: red;
 }

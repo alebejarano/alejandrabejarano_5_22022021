@@ -90,7 +90,7 @@ function deleteItem(itemId, quantityToDelete) {
     displayCartCounter();
   }
 }
-//once the form is valid it will collect the data: contact as anobject and the id's od the items as an array to then be send to the api
+//once the form is valid it will collect the data: contact as an object and the id's od the items as an array to then be send to the api
 function checkout(event) {
   event.preventDefault();
   if (formIsValid()) {
