@@ -1,6 +1,10 @@
+//to reset the errors so when the user corrects the input the err messeges disappears 
 document.querySelectorAll('#form input').forEach(input => {
-  input.addEventListener('change', resetError(input));
+  input.addEventListener('change', event => {
+    resetError(event.target);
+  });
 }); 
+
 // to display the selected products to buy
 function displayCart() {
   let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
@@ -162,7 +166,9 @@ function invalidateField(input, message) {
   input.parentElement.classList.add('invalid');
   input.nextSibling.nextSibling.innerText = message;
 }
+// to reset the errror and remove class and message
 function resetError(input) {
+  console.log(input);
   input.parentElement.classList.remove('invalid');
   input.nextSibling.nextSibling.innerText = '';
 }
