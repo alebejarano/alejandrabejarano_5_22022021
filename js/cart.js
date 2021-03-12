@@ -123,7 +123,7 @@ formElement.addEventListener('submit', checkout);
 
 displayCart();
 
-// regular expressions for the form validation in cart page
+// to loop and check for the errors, to validate at the end all  of the inputs
 function formIsValid() {
   let formInputs = document.querySelectorAll('#form input');
   let numOfErrors = 0;
@@ -135,17 +135,8 @@ function formIsValid() {
   });
   return numOfErrors === 0;
 }
-// if the input is not valid the error message and invalid class will appear
-function invalidateField(input, message) {
-  input.parentElement.classList.add('invalid');
-  input.nextSibling.nextSibling.innerText = message;
-}
-// to reset the errror and remove class and message
-function resetError(input) {
-  input.parentElement.classList.remove('invalid');
-  input.nextSibling.nextSibling.innerText = '';
-}
-// to validate an specific input field
+// to validate an specific input field with the help of regular expressions
+// this function is call twice
 function fieldIsValid(input) {
   const mailPattern = /^[a-z0-9.-_]+@[a-z0-9-]+\.[a-z]{2,4}$/i;
   const namePattern = /^[a-z-À-ÖØ-öø-ÿ ]+$/i;
@@ -177,3 +168,14 @@ function fieldIsValid(input) {
   }
   return true;
 }
+// if the input is not valid the error message and invalid class will appear
+function invalidateField(input, message) {
+  input.parentElement.classList.add('invalid');
+  input.nextSibling.nextSibling.innerText = message;
+}
+// to reset the errror and remove class and message
+function resetError(input) {
+  input.parentElement.classList.remove('invalid');
+  input.nextSibling.nextSibling.innerText = '';
+}
+
