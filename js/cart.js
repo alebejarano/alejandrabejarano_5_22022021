@@ -1,3 +1,6 @@
+document.querySelectorAll('#form input').forEach(input => {
+  input.addEventListener('change', resetError(input));
+}); 
 // to display the selected products to buy
 function displayCart() {
   let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
@@ -66,8 +69,6 @@ function displayCart() {
   }
   productContainer.appendChild(totalPriceContainer);
 }
- 
-
 // to delete items in cart page
 function deleteItem(itemId, quantityToDelete) {
   let productsInCart = localStorage.getItem('productsInCart');
@@ -131,6 +132,7 @@ function formIsValid() {
 
 
   formInputs.forEach(input => {
+    resetError(input);
     switch (input.id) {
       case 'lastName':
       case 'firstName':
@@ -159,4 +161,8 @@ function formIsValid() {
 function invalidateField(input, message) {
   input.parentElement.classList.add('invalid');
   input.nextSibling.nextSibling.innerText = message;
+}
+function resetError(input) {
+  input.parentElement.classList.remove('invalid');
+  input.nextSibling.nextSibling.innerText = '';
 }

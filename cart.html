@@ -25,7 +25,7 @@
                 <div id="items-in-cart">0</div>
             </div>
             <div class="icons-menu">
-                <a class="nav-link link-style" href="#" >
+                <a class="nav-link link-style" href="#">
                     <i class="fas fa-heart icon-nav-2"></i>
                 </a>
             </div>
@@ -33,16 +33,18 @@
                 <img src="orinico-copy.png" alt="logo du site" class="img-logo">
             </a>
             <nav class="menu">
-                    <ul class="nav pr-lg-5">
-                        <li class="nav-item active">
-                            <a class="nav-link link-style" href="index.html"><span>T</span><span>e</span><span>e</span><span>d</span><span>i</span><span>e</span><span>s</span><span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link link-style" href="#"><span>C</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span></a>
-                        </li>
-                    </ul>
+                <ul class="nav pr-lg-5">
+                    <li class="nav-item active">
+                        <a class="nav-link link-style" title="teddies"
+                            href="index.html"><span>T</span><span>e</span><span>e</span><span>d</span><span>i</span><span>e</span><span>s</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-style" title="contact"
+                            href="#"><span>C</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span></a>
+                    </li>
+                </ul>
             </nav>
-        </div>    
+        </div>
     </header>
     <main>
         <section id="cartProducts" class="container mt-4">
@@ -56,27 +58,32 @@
                     <form method="POST" class="m-3" name="form" id="form" autocomplete="on">
                         <div class="form-group">
                             <label for="lastName">Nom</label>
-                            <input type="text" name="lastName" class="form-control" id="lastName" aria-describedby="lastNameDesc" aria-required=”true” required>
+                            <input type="text" name="lastName" class="form-control" id="lastName"
+                                aria-describedby="lastNameDesc" aria-required=”true” required>
                             <small id="lastNameDesc" class="error-message"></small>
                         </div>
                         <div class="form-group">
                             <label for="firstName">Prénom</label>
-                            <input type="text" name="firstName" class="form-control" id="firstName" aria-describedby="nameDesc" aria-required=”true” required>
+                            <input type="text" name="firstName" class="form-control" id="firstName"
+                                aria-describedby="nameDesc" aria-required=”true” required>
                             <small id="nameDesc" class="error-message"></small>
                         </div>
                         <div class="form-group">
                             <label for="email">E-mail</label>
-                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailDesc" aria-required=”true” required>
+                            <input type="email" class="form-control" id="email" name="email"
+                                aria-describedby="emailDesc" aria-required=”true” required>
                             <small id="emailDesc" class="error-message"></small>
                         </div>
                         <div class="form-group">
                             <label for="address">Adresse</label>
-                            <input type="text" name="address" class="form-control" id="address" aria-describedby="addressDesc" aria-required=”true” required>
+                            <input type="text" name="address" class="form-control" id="address"
+                                aria-describedby="addressDesc" aria-required=”true” required>
                             <small id="addressDesc" class="error-message"></small>
                         </div>
                         <div class="form-group">
                             <label for="city">Ville</label>
-                            <input type="text" name="city" class="form-control" id="city" aria-describedby="cityDesc" aria-required=”true” required>
+                            <input type="text" name="city" class="form-control" id="city" aria-describedby="cityDesc"
+                                aria-required=”true” required>
                             <small id="cityDesc" class="error-message"></small>
                         </div>
                         <button type="submit" class="btn btn-secondary mb-5" id="redirect">Valider</button>
@@ -84,7 +91,6 @@
                 </div>
             </div>
         </section>
-       
     </main>
     <footer>
         <div class="container-fluid footer-background p-4">
@@ -92,21 +98,24 @@
                 <div class="col-12 col-sm-6">
                     <ul class="nav">
                         <li class="nav-item">
-                          <a class="nav-link  link-style active" href="#">Livraisons et Retours</a>
+                            <a class="nav-link  link-style active" href="#">Livraisons et Retours</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link link-style" href="#">Mentions Légales</a>
+                            <a class="nav-link link-style" href="#">Mentions Légales</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link link-style" href="#">FAQ</a>
+                            <a class="nav-link link-style" href="#">FAQ</a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-3 col-sm mr-3 ml-3 mt-2">
                     <ul class="list-unstyled list-inline d-flex">
-                        <li class="mr-2 mr-md-4"><a class="text-dark social-media-handle" href="#"><i class="fab fa-facebook-f icon-social-media"></i></a></i></li>
-                        <li class="mr-2 mr-md-4"><a class="text-dark" href="#"><i class="fab fa-instagram icon-social-media"></i></a></li>
-                        <li class="mr-2 mr-md-4"><a class="text-dark" href="#"><i class="fab fa-twitter icon-social-media"></i></a></li>
+                        <li class="mr-2 mr-md-4"><a class="text-dark social-media-handle" href="#"><i
+                                    class="fab fa-facebook-f icon-social-media"></i></a></i></li>
+                        <li class="mr-2 mr-md-4"><a class="text-dark" href="#"><i
+                                    class="fab fa-instagram icon-social-media"></i></a></li>
+                        <li class="mr-2 mr-md-4"><a class="text-dark" href="#"><i
+                                    class="fab fa-twitter icon-social-media"></i></a></li>
                     </ul>
                 </div>
                 <div class="col-3 col-sm mr-3 mt-2">
@@ -120,5 +129,5 @@
         </div>
     </footer>
 </body>
-</html>
 
+</html>
