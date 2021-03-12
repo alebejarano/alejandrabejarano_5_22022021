@@ -1,7 +1,7 @@
 //to reset the errors so when the user corrects the input the err messeges disappears 
 document.querySelectorAll('#form input').forEach(input => {
   input.addEventListener('change', event => {
-    resetError(event.target);
+    fieldIsValid(event.target);
   });
 }); 
 
@@ -125,38 +125,12 @@ displayCart();
 
 // regular expressions for the form validation in cart page
 function formIsValid() {
-  const form = document.getElementById('form');
   let formInputs = document.querySelectorAll('#form input');
-  console.log(formInputs);
-  let mailInput = document.getElementById('email');
   let numOfErrors = 0;
-  const mailPattern = /^[a-z0-9.-_]+@[a-z0-9-]+\.[a-z]{2,4}$/i;
-  const namePattern = /^[a-z-À-ÖØ-öø-ÿ ]+$/i;
-  const textPattern = /^[-'a-z0-9À-ÖØ-öø-ÿ ]+$/i;
-
-
+  
   formInputs.forEach(input => {
-    resetError(input);
-    switch (input.id) {
-      case 'lastName':
-      case 'firstName':
-        if (!input.value.match(namePattern)) {
-          invalidateField(input, 'Champs invalide');
-          numOfErrors++;
-        }
-        break;
-      case 'email':
-        if (!mailInput.value.match(mailPattern)) {
-          invalidateField(input, 'Adresse email invalide. Ex adresse email valide : jhon@hotmail.com');
-          numOfErrors++;
-        }
-        break;
-      case 'address':
-      case 'city':
-        if(!input.value.match(textPattern)) {
-          invalidateField(input, 'Champs invalid ');
-        }
-        break;
+    if(!fieldIsValid(input)) {
+      numOfErrors++;
     }
   });
   return numOfErrors === 0;
@@ -168,7 +142,38 @@ function invalidateField(input, message) {
 }
 // to reset the errror and remove class and message
 function resetError(input) {
-  console.log(input);
   input.parentElement.classList.remove('invalid');
   input.nextSibling.nextSibling.innerText = '';
+}
+// to validate an specific input field
+function fieldIsValid(input) {
+  const mailPattern = /^[a-z0-9.-_]+@[a-z0-9-]+\.[a-z]{2,4}$/i;
+  const namePattern = /^[a-z-À-ÖØ-öø-ÿ ]+$/i;
+  const textPattern = /^[-'a-z0-9À-ÖØ-öø-ÿ ]+$/i;
+
+  resetError(input);
+
+  switch (input.id) {
+    case 'lastName':
+    case 'firstName':
+      if (!input.value.match(namePattern)) {
+        invalidateField(input, 'Champs invalide');
+        return false;
+      }
+      break;
+    case 'email':
+      if (!input.value.match(mailPattern)) {
+        invalidateField(input, 'Adresse email invalide. Ex adresse email valide : jhon@hotmail.com');
+        return false;
+      }
+      break;
+    case 'address':
+    case 'city':
+      if(!input.value.match(textPattern)) {
+        invalidateField(input, 'Champs invalid ');
+        return false;
+      }
+      break;
+  }
+  return true;
 }
