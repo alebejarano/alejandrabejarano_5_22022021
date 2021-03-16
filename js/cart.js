@@ -142,7 +142,7 @@ function formIsValid() {
 function fieldIsValid(input) {
   const mailPattern = /^[a-z0-9-_.]+@[a-z0-9-]+\.[a-z]{2,4}$/i;
   const namePattern = /^[a-z-À-ÖØ-öø-ÿ ]+$/i;
-  const textPattern = /^[-'a-z0-9À-ÖØ-öø-ÿ ]+$/i;
+  const textPattern = /^[-'#a-z0-9À-ÖØ-öø-ÿ ]+$/i;
 
   resetError(input);
 
