@@ -5,7 +5,7 @@ document.querySelectorAll('#form input').forEach(input => {
   });
 }); 
 
-// to display the selected products to buy
+// to display the selected products to buy in the cart page
 function displayCart() {
   let cartItems = JSON.parse(localStorage.getItem('productsInCart'));
   let productContainer = document.getElementById('cartProducts');
@@ -17,13 +17,13 @@ function displayCart() {
       const product = document.createElement('div');
       product.classList.add('row');
       product.innerHTML +=
-        `<div class=" col col-sm">
+        `<div class=" col-6 col-sm">
             <img src="${item.imageUrl}" width="100">
         </div>
-        <div class="col col-sm">
+        <div class="col-6 col-sm">
             <p class="teddie-name">${item.name}</p>
         </div>
-        <div class="col col-sm">
+        <div class="col-6 col-sm">
             <div class="btn-group btn-group-sm" role="group" aria-label="augmenter ou réduire la quantité">
                 <button type="button" data-product="${item._id}" class="decrease btn btn-light">-</button>
                 <button type="button" class="btn btn-light">${item.quantity}</button>
@@ -31,7 +31,7 @@ function displayCart() {
             </div>
             <span class="ml-2"><i class="delete fas fa-times" data-product="${item._id}" title="supprimer"></i></span>
         </div>
-        <div class="col col-sm">
+        <div class="col-6 col-sm">
             ${item.price}&euro;
         </div>
         <hr class="line-break">
@@ -60,7 +60,7 @@ function displayCart() {
       });
     });
   }
-  // calculates the total price or indicates if there is no items in cart
+  // calculates the total price or indicates if there is no items in cart and if there is no items in cart the client form will not appear
   const totalPriceContainer = document.createElement('div');
   if (totalPrice > 0) {
     totalPriceContainer.classList.add('d-flex', 'justify-content-end', 'mr-5');
@@ -70,6 +70,8 @@ function displayCart() {
     totalPriceContainer.classList.add('d-flex', 'justify-content-center', 'text-muted');
     totalPriceContainer.innerHTML +=
       `Votre panier est vide`;
+    let clientContactForm = document.getElementById('client-contact-container');
+    clientContactForm.style.display = 'none';
   }
   productContainer.appendChild(totalPriceContainer);
 }
@@ -138,7 +140,7 @@ function formIsValid() {
 // to validate an specific input field with the help of regular expressions
 // this function is call twice
 function fieldIsValid(input) {
-  const mailPattern = /^[a-z0-9.-_]+@[a-z0-9-]+\.[a-z]{2,4}$/i;
+  const mailPattern = /^[a-z0-9-_.]+@[a-z0-9-]+\.[a-z]{2,4}$/i;
   const namePattern = /^[a-z-À-ÖØ-öø-ÿ ]+$/i;
   const textPattern = /^[-'a-z0-9À-ÖØ-öø-ÿ ]+$/i;
 
