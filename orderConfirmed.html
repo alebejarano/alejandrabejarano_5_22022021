@@ -1,104 +1,110 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta description="Orinoco vente numero 1 en ours en pelouche faite à main">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-    <script src="https://kit.fontawesome.com/92f9a50f4f.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="scss/style.css">
-    <title>Orinoco</title>
-    <script src="js/main.js" defer></script>
-    <script src="js/orderConfirmed.js" defer></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta description="Orinoco vente numero 1 en ours en pelouche faite à main">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+  <script src="https://kit.fontawesome.com/92f9a50f4f.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="scss/style.css">
+  <title>Orinoco</title>
+  <script src="js/main.js" defer></script>
+  <script src="js/orderConfirmed.js" defer></script>
 </head>
+
 <body>
-    <header>
-        <div class="header-background">
-            <div class="icons-menu">
-                <a class="nav-link link-style" href="cart.html" aria-label="cart items">
-                    <i class="fas fa-shopping-cart icon-nav-1"></i>
-                </a>
-                <div id="items-in-cart">0</div>
-            </div>
-            <div class="icons-menu">
-                <a class="nav-link link-style" href="#" aria-label="Wish List">
-                    <i class="fas fa-heart icon-nav-2"></i>
-                </a>
-            </div>
-            <a class="logo" href="index.html">
-                <img src="orinico-copy.png" alt="logo du site" class="img-logo">
-            </a>
-            <nav class="menu">
-                <ul class="nav pr-lg-5">
-                    <li class="nav-item active">
-                        <a class="nav-link link-style" title="teddies" href="index.html"><span>T</span><span>e</span><span>e</span><span>d</span><span>i</span><span>e</span><span>s</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link link-style" title="contact" href="#"><span>C</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span></a>
-                    </li>
-                </ul>
-            </nav>
-        </div>    
-    </header>
-    <main>
-        <section>
-            <div>
-                <h1 class="text-center mt-5">Merci!</h1>
-                <p class="text-center">Une confirmation à été envoyé a votre mail</p>
-            </div>
-            <div>
-                <h2 class="h5 text-center mt-5">Numéro de commande:</h2>
-                <p id="command-id" class="mb-5 text-center"></p>
-                <!--ID of the order will show here-->
-                <h3 class="text-center h6 mt-5">Total de votre commande:</h3>
-                <!--The total price of the order will appear here-->
-                <p id="final-price" class="text-center"></p>
-                <a id="back-to-home" href="index.html" class="link-style d-block h5 mt-5 text-center">Retourner à l'acueil</a>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div class="container-fluid footer-background p-4">
-            <div class="row">
-                <div class="col-12 col-sm-6">
-                    <ul class="nav">
-                        <li class="nav-item">
-                          <a class="nav-link  link-style active" href="#">Livraisons et Retours</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link link-style" href="#">Mentions Légales</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link link-style" href="#">FAQ</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-3 col-sm mr-3 ml-3 mt-2">
-                    <ul class="list-unstyled list-inline d-flex">
-                        <li class="mr-2 mr-md-4"><a class="text-dark social-media-handle" href="#" aria-label="Visit our Facebook page">
-                            <i class="fab fa-facebook-f icon-social-media"></i></a></i>
-                        </li>
-                        <li class="mr-2 mr-md-4"><a class="text-dark" href="#" aria-label="Visit our Intagram">
-                            <i class="fab fa-instagram icon-social-media"></i></a>
-                        </li>
-                        <li class="mr-2 mr-md-4"><a class="text-dark" href="#" aria-label="Stay up to date on Twitter">
-                            <i class="fab fa-twitter icon-social-media"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-3 col-sm mr-3 mt-2">
-                    <ul class="list-unstyled list-inline d-flex ml-4">
-                        <li class="list-inline-item"><i class="fab fa-cc-paypal"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-cc-visa"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-cc-mastercard"></i></li>
-                    </ul>
-                </div>
-            </div>
+  <header>
+    <div class="header-background">
+      <div class="icons-menu">
+        <a class="nav-link link-style" href="cart.html" aria-label="cart items">
+          <i class="fas fa-shopping-cart icon-nav-1"></i>
+        </a>
+        <div id="items-in-cart">0</div>
+      </div>
+      <div class="icons-menu">
+        <a class="nav-link link-style" href="#" aria-label="Wish List">
+          <i class="fas fa-heart icon-nav-2"></i>
+        </a>
+      </div>
+      <a class="logo" href="index.html">
+        <img src="orinico-copy.png" alt="logo du site" class="img-logo">
+      </a>
+      <nav class="menu">
+        <ul class="nav pr-lg-5">
+          <li class="nav-item active">
+            <a class="nav-link link-style" title="teddies"
+              href="index.html"><span>T</span><span>e</span><span>e</span><span>d</span><span>i</span><span>e</span><span>s</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-style" title="contact"
+              href="#"><span>C</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section>
+      <div>
+        <h1 class="text-center mt-5">Merci!</h1>
+        <p class="text-center">Une confirmation à été envoyé a votre mail</p>
+      </div>
+      <div>
+        <h2 class="h5 text-center mt-5">Numéro de commande:</h2>
+        <p id="command-id" class="mb-5 text-center"></p>
+        <!--ID of the order will show here-->
+        <h3 class="text-center h6 mt-5">Total de votre commande:</h3>
+        <!--The total price of the order will appear here-->
+        <p id="final-price" class="text-center"></p>
+        <a id="back-to-home" href="index.html" class="link-style d-block h5 mt-5 text-center">Retourner à l'acueil</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container-fluid footer-background p-4">
+      <div class="row">
+        <div class="col-12 col-sm-6">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link  link-style active" href="#">Livraisons et Retours</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-style" href="#">Mentions Légales</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-style" href="#">FAQ</a>
+            </li>
+          </ul>
         </div>
-    </footer>
+        <div class="col-3 col-sm mr-3 ml-3 mt-2">
+          <ul class="list-unstyled list-inline d-flex">
+            <li class="mr-2 mr-md-4"><a class="text-dark social-media-handle" href="#"
+                aria-label="Visit our Facebook page">
+                <i class="fab fa-facebook-f icon-social-media"></i></a></i>
+            </li>
+            <li class="mr-2 mr-md-4"><a class="text-dark" href="#" aria-label="Visit our Intagram">
+                <i class="fab fa-instagram icon-social-media"></i></a>
+            </li>
+            <li class="mr-2 mr-md-4"><a class="text-dark" href="#" aria-label="Stay up to date on Twitter">
+                <i class="fab fa-twitter icon-social-media"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-3 col-sm mr-3 mt-2">
+          <ul class="list-unstyled list-inline d-flex ml-4">
+            <li class="list-inline-item"><i class="fab fa-cc-paypal"></i></li>
+            <li class="list-inline-item"><i class="fab fa-cc-visa"></i></li>
+            <li class="list-inline-item"><i class="fab fa-cc-mastercard"></i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
+
 </html>

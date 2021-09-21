@@ -2,140 +2,141 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="index,follow">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-    <script src="https://kit.fontawesome.com/92f9a50f4f.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="scss/style.css">
-    <title>Shopping Cart - Orinoco</title>
-    <script src="js/main.js" defer></script>
-    <script src="js/cart.js" defer></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index,follow">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+  <script src="https://kit.fontawesome.com/92f9a50f4f.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="scss/style.css">
+  <title>Shopping Cart - Orinoco</title>
+  <script src="js/main.js" defer></script>
+  <script src="js/cart.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <div class="header-background">
-            <div class="icons-menu">
-                <a class="nav-link link-style" href="cart.html" aria-label="cart items">
-                    <i class="fas fa-shopping-cart icon-nav-1"></i>
-                </a>
-                <div id="items-in-cart">0</div>
-            </div>
-            <div class="icons-menu">
-                <a class="nav-link link-style" href="#" aria-label="Wish List">
-                    <i class="fas fa-heart icon-nav-2"></i>
-                </a>
-            </div>
-            <a class="logo" href="index.html">
-                <img src="orinico-copy.png" alt="logo du site" class="img-logo">
-            </a>
-            <nav class="menu">
-                <ul class="nav pr-lg-5">
-                    <li class="nav-item active">
-                        <a class="nav-link link-style" title="teddies"
-                            href="index.html"><span>T</span><span>e</span><span>e</span><span>d</span><span>i</span><span>e</span><span>s</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link link-style" title="contact"
-                            href="#"><span>C</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span></a>
-                    </li>
-                </ul>
-            </nav>
+  <header>
+    <div class="header-background">
+      <div class="icons-menu">
+        <a class="nav-link link-style" href="cart.html" aria-label="cart items">
+          <i class="fas fa-shopping-cart icon-nav-1"></i>
+        </a>
+        <div id="items-in-cart">0</div>
+      </div>
+      <div class="icons-menu">
+        <a class="nav-link link-style" href="#" aria-label="Wish List">
+          <i class="fas fa-heart icon-nav-2"></i>
+        </a>
+      </div>
+      <a class="logo" href="index.html">
+        <img src="orinico-copy.png" alt="logo du site" class="img-logo">
+      </a>
+      <nav class="menu">
+        <ul class="nav pr-lg-5">
+          <li class="nav-item active">
+            <a class="nav-link link-style" title="teddies"
+              href="index.html"><span>T</span><span>e</span><span>e</span><span>d</span><span>i</span><span>e</span><span>s</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link-style" title="contact"
+              href="#"><span>C</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section id="cartProducts" class="container mt-4">
+      <!---Items in cart will appear-->
+    </section>
+    <hr>
+    <!--Form to valid the order-->
+    <div id="client-contact-container">
+      <h2 class="ml-3 mt-5 text-center">Coordonnées</h2>
+      <section class="container">
+        <div class="row justify-content-lg-center">
+          <div class="col-lg-6">
+            <form method="POST" class="m-3" name="form" id="form" autocomplete="on">
+              <div class="form-group">
+                <label for="lastName">Nom</label>
+                <input type="text" name="lastName" class="form-control" id="lastName" aria-describedby="lastNameDesc"
+                  aria-required=”true” required>
+                <small id="lastNameDesc" class="error-message"></small>
+              </div>
+              <div class="form-group">
+                <label for="firstName">Prénom</label>
+                <input type="text" name="firstName" class="form-control" id="firstName" aria-describedby="nameDesc"
+                  aria-required=”true” required>
+                <small id="nameDesc" class="error-message"></small>
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" class="form-control" id="email" name="email" aria-describedby="emailDesc"
+                  aria-required=”true” required>
+                <small id="emailDesc" class="error-message"></small>
+              </div>
+              <div class="form-group">
+                <label for="address">Adresse</label>
+                <input type="text" name="address" class="form-control" id="address" aria-describedby="addressDesc"
+                  aria-required=”true” required>
+                <small id="addressDesc" class="error-message"></small>
+              </div>
+              <div class="form-group">
+                <label for="city">Ville</label>
+                <input type="text" name="city" class="form-control" id="city" aria-describedby="cityDesc"
+                  aria-required=”true” required>
+                <small id="cityDesc" class="error-message"></small>
+              </div>
+              <button type="submit" class="btn btn-secondary mb-5" id="redirect">Valider ma commande</button>
+            </form>
+          </div>
         </div>
-    </header>
-    <main>
-        <section id="cartProducts" class="container mt-4">
-            <!---Items in cart will appear-->
-        </section>
-        <hr>
-        <!--Form to valid the order-->
-        <div id="client-contact-container">
-            <h2 class="ml-3 mt-5 text-center">Coordonnées</h2>
-            <section class="container">
-                <div class="row justify-content-lg-center">
-                    <div class="col-lg-6">
-                        <form method="POST" class="m-3" name="form" id="form" autocomplete="on">
-                            <div class="form-group">
-                                <label for="lastName">Nom</label>
-                                <input type="text" name="lastName" class="form-control" id="lastName"
-                                    aria-describedby="lastNameDesc" aria-required=”true” required>
-                                <small id="lastNameDesc" class="error-message"></small>
-                            </div>
-                            <div class="form-group">
-                                <label for="firstName">Prénom</label>
-                                <input type="text" name="firstName" class="form-control" id="firstName"
-                                    aria-describedby="nameDesc" aria-required=”true” required>
-                                <small id="nameDesc" class="error-message"></small>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">E-mail</label>
-                                <input type="email" class="form-control" id="email" name="email"
-                                    aria-describedby="emailDesc" aria-required=”true” required>
-                                <small id="emailDesc" class="error-message"></small>
-                            </div>
-                            <div class="form-group">
-                                <label for="address">Adresse</label>
-                                <input type="text" name="address" class="form-control" id="address"
-                                    aria-describedby="addressDesc" aria-required=”true” required>
-                                <small id="addressDesc" class="error-message"></small>
-                            </div>
-                            <div class="form-group">
-                                <label for="city">Ville</label>
-                                <input type="text" name="city" class="form-control" id="city" aria-describedby="cityDesc"
-                                    aria-required=”true” required>
-                                <small id="cityDesc" class="error-message"></small>
-                            </div>
-                            <button type="submit" class="btn btn-secondary mb-5" id="redirect">Valider ma commande</button>
-                        </form>
-                    </div>
-                </div>
-            </section>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <div class="container-fluid footer-background p-4">
+      <div class="row">
+        <div class="col-12 col-sm-6">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link  link-style active" href="#">Livraisons et Retours</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-style" href="#">Mentions Légales</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link-style" href="#">FAQ</a>
+            </li>
+          </ul>
         </div>
-    </main>
-    <footer>
-        <div class="container-fluid footer-background p-4">
-            <div class="row">
-                <div class="col-12 col-sm-6">
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link  link-style active" href="#">Livraisons et Retours</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link link-style" href="#">Mentions Légales</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link link-style" href="#">FAQ</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-3 col-sm mr-3 ml-3 mt-2">
-                    <ul class="list-unstyled list-inline d-flex">
-                        <li class="mr-2 mr-md-4"><a class="text-dark social-media-handle" href="#" aria-label="Visit our Facebook page">
-                            <i class="fab fa-facebook-f icon-social-media"></i></a></i>
-                        </li>
-                        <li class="mr-2 mr-md-4"><a class="text-dark" href="#" aria-label="Visit our Instagram">
-                            <i class="fab fa-instagram icon-social-media"></i></a>
-                        </li>
-                        <li class="mr-2 mr-md-4"><a class="text-dark" href="#" aria-label="stay up to date on Twitter">
-                            <i class="fab fa-twitter icon-social-media"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-3 col-sm mr-3 mt-2">
-                    <ul class="list-unstyled list-inline d-flex ml-4">
-                        <li class="list-inline-item"><i class="fab fa-cc-paypal"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-cc-visa"></i></li>
-                        <li class="list-inline-item"><i class="fab fa-cc-mastercard"></i></li>
-                    </ul>
-                </div>
-            </div>
+        <div class="col-3 col-sm mr-3 ml-3 mt-2">
+          <ul class="list-unstyled list-inline d-flex">
+            <li class="mr-2 mr-md-4"><a class="text-dark social-media-handle" href="#"
+                aria-label="Visit our Facebook page">
+                <i class="fab fa-facebook-f icon-social-media"></i></a></i>
+            </li>
+            <li class="mr-2 mr-md-4"><a class="text-dark" href="#" aria-label="Visit our Instagram">
+                <i class="fab fa-instagram icon-social-media"></i></a>
+            </li>
+            <li class="mr-2 mr-md-4"><a class="text-dark" href="#" aria-label="stay up to date on Twitter">
+                <i class="fab fa-twitter icon-social-media"></i></a>
+            </li>
+          </ul>
         </div>
-    </footer>
+        <div class="col-3 col-sm mr-3 mt-2">
+          <ul class="list-unstyled list-inline d-flex ml-4">
+            <li class="list-inline-item"><i class="fab fa-cc-paypal"></i></li>
+            <li class="list-inline-item"><i class="fab fa-cc-visa"></i></li>
+            <li class="list-inline-item"><i class="fab fa-cc-mastercard"></i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 
 </html>
